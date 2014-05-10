@@ -48,3 +48,17 @@ public class Father : ParseObject, IFather
 
 new ParseQuery<Father>().Include(f => f.Children[0].Name); // becomes "children.name"
 ```
+
+Installation
+------------
+
+Download the DLL (https://github.com/mikecann/Unity-Parse-Helpers/releases) and include in your unity project. 
+
+Make sure you also have the Parse.com SDK in your project.
+
+Then simply add:
+
+```
+using UnityParseHelpers;
+```
+

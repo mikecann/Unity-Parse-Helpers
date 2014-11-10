@@ -1,7 +1,10 @@
 Unity-Parse-Helpers
 ===================
 
-This library provides type-safe extension methods for using Parse.com
+This library provides a number of helpers and utilities for dealing with Parse.com in Unity 3D
+
+Linq Intergrationn
+-----------------
 
 If you like using Parse.com in Unity but hate the fact you have to make non-type-safe calls such as:
 

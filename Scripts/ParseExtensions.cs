@@ -130,10 +130,10 @@ namespace UnityParseHelpers
             return query.WhereExists(GetKey<TSource, TValue>(expression));
         }
 
-        public static ParseQuery<TSource> WhereMatches<TSource, TValue>(this ParseQuery<TSource> query, Expression<Func<TSource, TValue>> expression, string pattern) where TSource : ParseObject
-        {
-            return query.WhereMatches(GetKey<TSource, TValue>(expression), pattern);
-        }
+        //public static ParseQuery<TSource> WhereMatches<TSource, TValue>(this ParseQuery<TSource> query, Expression<Func<TSource, TValue>> expression, string pattern) where TSource : ParseObject
+        //{
+        //    return query.WhereMatches(GetKey<TSource, TValue>(expression), pattern);
+        //}
 
         public static ParseQuery<TSource> WhereNear<TSource, TValue>(this ParseQuery<TSource> query, Expression<Func<TSource, TValue>> expression, ParseGeoPoint point) where TSource : ParseObject
         {

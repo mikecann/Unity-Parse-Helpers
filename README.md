@@ -3,7 +3,7 @@ Unity-Parse-Helpers
 
 This library provides a number of helpers and utilities for dealing with Parse.com in Unity 3D
 
-Linq Intergrationn
+Linq Intergration
 -----------------
 
 If you like using Parse.com in Unity but hate the fact you have to make non-type-safe calls such as:

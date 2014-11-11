@@ -3,7 +3,7 @@ Unity-Parse-Helpers
 
 This library provides a number of helpers and utilities for dealing with Parse.com in Unity 3D
 
-Linq Intergration
+Type-Safe Queries
 -----------------
 
 If you like using Parse.com in Unity but hate the fact you have to make non-type-safe calls such as:
@@ -52,16 +52,39 @@ public class Father : ParseObject, IFather
 new ParseQuery<Father>().Include(f => f.Children[0].Name); // becomes "children.name"
 ```
 
+Task Chaining
+--------------
+
+A series of extension methods have been provided that let you chain together calls in a Javascript-Promise like manner:
+
+```
+ // Signup
+userService.Signup(usernameInp.text, passwordInp.text, playernameInp.text)
+
+	// Then Login
+	.Then(t => userService.Login(usernameInp.text, passwordInp.text))
+
+	// Then we are done
+	.Then(OnLoggedIn, OnError);             
+```
+
+Looming
+-------
+
+Using the extension ".OnMainThread()" for Task you can ensure that your Parse async calls always run in the main thread:
+
+```
+public Task<GameUser> Login(string email, string password)
+{
+	Debug.Log("Logging in..");
+
+	return ParseUser.LogInAsync(email, password)
+		.OnMainThread()
+		.Then(t => Task.FromResult((GameUser)t.Result));
+}
+```
+
 Installation
 ------------
 
-Download the DLL (https://github.com/mikecann/Unity-Parse-Helpers/releases) and include in your unity project. 
-
-Make sure you also have the Parse.com SDK in your project.
-
-Then simply add:
-
-```
-using UnityParseHelpers;
-```
-
+Checkout this project as a sub-module in your project, and you should be good to go!

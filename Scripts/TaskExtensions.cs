@@ -31,6 +31,7 @@ public static class TaskExtensions
                 }
                 catch (Exception ex)
                 {
+                    Debug.LogException(ex);
                     tcs.TrySetException(ex);
                 }
             }
@@ -63,6 +64,7 @@ public static class TaskExtensions
                 }
                 catch (Exception ex)
                 {
+                    Debug.LogException(ex);
                     tcs.TrySetException(ex);
                 }
             }
@@ -90,6 +92,7 @@ public static class TaskExtensions
                 }
                 catch (Exception ex)
                 {
+                    Debug.LogException(ex);
                     tcs.TrySetException(ex);
                 }
             }
@@ -125,6 +128,7 @@ public static class TaskExtensions
                             }
                             catch (Exception ex)
                             {
+                                Debug.LogException(ex);
                                 tcs.TrySetException(ex);
                             }
                         }
@@ -133,6 +137,7 @@ public static class TaskExtensions
                 }
                 catch (Exception ex)
                 {
+                    Debug.LogException(ex);
                     tcs.TrySetException(ex);
                 }
             }
@@ -163,6 +168,7 @@ public static class TaskExtensions
                 }
                 catch (Exception ex)
                 {
+                    Debug.LogException(ex);
                     tcs.TrySetException(ex);
                 }
             }
@@ -196,6 +202,7 @@ public static class TaskExtensions
                 }
                 catch (Exception ex)
                 {
+                    Debug.LogException(ex);
                     tcs.TrySetException(ex);
                 }
             }
@@ -224,6 +231,7 @@ public static class TaskExtensions
                 }
                 catch (Exception ex)
                 {
+                    Debug.LogException(ex);
                     tcs.TrySetException(ex);
                 }
             }
@@ -260,6 +268,7 @@ public static class TaskExtensions
                             }
                             catch (Exception ex)
                             {
+                                Debug.LogException(ex);
                                 tcs.TrySetException(ex);
                             }
                         }
@@ -268,6 +277,7 @@ public static class TaskExtensions
                 }
                 catch (Exception ex)
                 {
+                    Debug.LogException(ex);
                     tcs.TrySetException(ex);
                 }
             }
@@ -415,6 +425,27 @@ public static class TaskExtensions
         return tcs.Task;
     }
 
+    //public static Task ThrowErrors(this Task task)
+    //{
+    //    var tcs = new TaskCompletionSource<AsyncVoid>();
+    //    var loom = Loom.Instance;
+
+    //    Action<Task> a = t =>
+    //    {
+    //        if (t.IsFaulted) throw t.Exception;   
+    //        loom.QueueOnMainThread(() =>
+    //        {
+    //            if (t.IsFaulted)  tcs.SetException(t.Exception);
+    //            else if (t.IsCanceled) tcs.SetCanceled();
+    //            else { tcs.SetResult(default(AsyncVoid)); }
+    //        });
+    //    };
+
+    //    task.ContinueWith(a);
+    //    return tcs.Task;
+    //}
+
+    
 }
 
 
